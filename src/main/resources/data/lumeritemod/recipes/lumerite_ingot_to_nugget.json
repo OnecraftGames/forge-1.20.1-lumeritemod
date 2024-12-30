@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lumeritemod:lumerite_ingot"
+    }
+  ],
+  "result": {
+    "item": "lumeritemod:lumerite_nugget",
+    "count": 9
+  }
+}

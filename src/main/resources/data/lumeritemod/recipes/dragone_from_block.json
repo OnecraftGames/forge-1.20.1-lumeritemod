@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "lumeritemod:dragone_block"
+    }
+  ],
+  "result": {
+    "item": "lumeritemod:dragone_ingot",
+    "count": 9
+  }
+}

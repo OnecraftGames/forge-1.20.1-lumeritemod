@@ -1,0 +1,12 @@
+{
+  "item.lumeritemod.lumerite_ingot": "Lingot de Lumerite",
+  "item.lumeritemod.lumerite_nugget": "Pépite de Lumerite",
+  "item.lumeritemod.lumerite_frag": "Fragment de Lumerite",
+  "item.lumeritemod.dragone_ingot": "Lingot de Dragone",
+  "item.lumeritemod.dragone_compressed": "Dragone Compressé",
+  "item.lumeritemod.dragone_heart": "Coeur de Dragon",
+
+  "block.lumeritemod.dragone_block": "Bloc de Dragone",
+
+  "creative_mode_tab.lumerite_tab": "Lumerite Mod"
+}
