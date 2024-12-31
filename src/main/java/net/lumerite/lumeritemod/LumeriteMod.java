@@ -2,16 +2,15 @@ package net.lumerite.lumeritemod;
 
 import com.mojang.logging.LogUtils;
 import net.lumerite.lumeritemod.block.ModBlock;
+import net.lumerite.lumeritemod.block.entity.ModBlockEntities;
 import net.lumerite.lumeritemod.item.ModCreativeModTabs;
 import net.lumerite.lumeritemod.item.ModItems;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Blocks;
+import net.lumerite.lumeritemod.screen.ModMenuTypes;
+import net.lumerite.lumeritemod.screen.extractorblock.ExtractorScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -39,6 +38,9 @@ public class LumeriteMod
         ModItems.register(modEventBus);
         ModCreativeModTabs.register(modEventBus);
         ModBlock.register(modEventBus);
+
+        ModMenuTypes.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -73,7 +75,7 @@ public class LumeriteMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
-          
+            MenuScreens.register(ModMenuTypes.EXTRACTOR_MENU.get(), ExtractorScreen::new);
         }
     }
 }

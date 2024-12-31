@@ -4,9 +4,14 @@
   "item.lumeritemod.lumerite_frag": "Fragment de Lumerite",
   "item.lumeritemod.dragone_ingot": "Lingot de Dragone",
   "item.lumeritemod.dragone_compressed": "Dragone Compressé",
-  "item.lumeritemod.dragone_heart": "Coeur de Dragon",
+  "item.lumeritemod.dragone_heart": "Coeur de Dragone",
 
   "block.lumeritemod.dragone_block": "Bloc de Dragone",
+  "block.lumeritemod.dragone_ore": "Minerai de Dragone",
+
+  "block.lumeritemod.extractor_block": "Bloc d'Extracteur",
+  "block.lumeritemod.extractor_block_casing": "Carcasse de Bloc d'Extracteur",
+  "block.lumeritemod.extractor_block_frame": "Cadre de Bloc d'Extracteur",
 
   "creative_mode_tab.lumerite_tab": "Lumerite Mod"
 }

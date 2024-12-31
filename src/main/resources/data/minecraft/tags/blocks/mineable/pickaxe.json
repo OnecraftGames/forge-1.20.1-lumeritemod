@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "onecraftmod:dragone_block",
-    "onecraftmod:dragone_ore"
+    "lumeritemod:dragone_block",
+    "lumeritemod:dragone_ore"
   ]
 }

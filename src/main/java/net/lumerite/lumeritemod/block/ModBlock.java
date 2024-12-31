@@ -1,6 +1,7 @@
 package net.lumerite.lumeritemod.block;
 
 import net.lumerite.lumeritemod.LumeriteMod;
+import net.lumerite.lumeritemod.block.custom.ExtractorBlock;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -26,6 +27,19 @@ public class ModBlock {
 
     public static final RegistryObject<Block> DRAGONE_ORE = registerBlock("dragone_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).sound(SoundType.STONE)));
+
+
+
+
+    public static final RegistryObject<Block> EXTRACTOR_BLOCK = registerBlock("extractor_block",
+            () -> new ExtractorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> EXTRACTOR_CASING = registerBlock("extractor_block_casing",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> EXTRACTOR_FRAME = registerBlock("extractor_block_frame",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

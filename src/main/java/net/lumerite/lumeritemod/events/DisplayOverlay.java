@@ -1,5 +1,6 @@
 package net.lumerite.lumeritemod.events;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,7 +16,7 @@ import net.minecraftforge.fml.common.Mod;
 
 
 @Mod.EventBusSubscriber(modid = "lumeritemod", bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
-public class BlockDisplayOverlay {
+public class DisplayOverlay {
 
     @SubscribeEvent
     public static void onRenderGuiOverlay(RenderGuiOverlayEvent.Post event) {
@@ -31,9 +32,8 @@ public class BlockDisplayOverlay {
             Block block = minecraft.level.getBlockState(pos).getBlock();
             String blockName = block.getName().getString();
 
-            if (block == Blocks.AIR) {
-                blockName = "";
-            }
+            if (block == Blocks.AIR) blockName = "";
+
 
             // Obtenir l'icône du bloc sous forme d'ItemStack
             ItemStack blockStack = new ItemStack(block.asItem());
@@ -44,11 +44,53 @@ public class BlockDisplayOverlay {
             graphics.drawString(font, blockName, 30, 15, 0xFFFFFF);
         }
 
+        //Afficher l'item tenu par le joueur
+        ItemStack heldItem = minecraft.player.getMainHandItem();
+        ItemStack offHandItem = minecraft.player.getOffhandItem();
+
+        graphics.renderItem(heldItem, 10, 150);
+        graphics.renderItem(offHandItem, 10, 170);
+
+        String heldItemStackCount = String.valueOf(heldItem.getCount());
+        String offHandItemStackCount = String.valueOf(offHandItem.getCount());
+
+        if (heldItem.isEmpty()) heldItemStackCount = "";
+        if (offHandItem.isEmpty()) offHandItemStackCount = "";
+
+
+        if (heldItem.isDamageableItem()) {
+            int maxDurability = heldItem.getMaxDamage();
+            int currentDurability = maxDurability - heldItem.getDamageValue();
+            float durabilityPercent = (float) currentDurability / maxDurability;
+
+            int green = (int)(255 * durabilityPercent);
+            int red = 255 - green;
+            int color = (red << 16) | (green << 8);
+
+            graphics.drawString(minecraft.font, String.valueOf(currentDurability), 30, 155, color);
+        } else {
+            graphics.drawString(minecraft.font, heldItemStackCount, 30, 155, 0xFFFFFF);
+        }
+
+        if (offHandItem.isDamageableItem()) {
+            int maxDurability = offHandItem.getMaxDamage();
+            int currentDurability = maxDurability - offHandItem.getDamageValue();
+            float durabilityPercent = (float) currentDurability / maxDurability;
+
+            int green = (int)(255 * durabilityPercent);
+            int red = 255 - green;
+            int color = (red << 16) | (green << 8);
+
+            graphics.drawString(minecraft.font, String.valueOf(currentDurability), 30, 175, color);
+        } else {
+            graphics.drawString(minecraft.font, offHandItemStackCount, 30, 175, 0xFFFFFF);
+        }
+
+        // Afficher les items de l'armure du joueur
 
         for (int i = 0; i < 4; i++) {
 
             ItemStack item = minecraft.player.getInventory().armor.get(3 - i);
-
 
             int y = 50 + i * 20;
 

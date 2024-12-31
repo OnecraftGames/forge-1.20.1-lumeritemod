@@ -2,11 +2,11 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "lumeritemod:lumerite_nugget"
+      "item": "lumeritemod:lumerite_frag"
     }
   ],
   "result": {
-    "item": "lumeritemod:lumerite_frag",
+    "item": "lumeritemod:lumerite_nugget",
     "count": 9
   }
 }

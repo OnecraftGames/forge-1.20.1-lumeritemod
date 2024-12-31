@@ -30,6 +30,10 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModBlock.DRAGONE_BLOCK.get());
                         pOutput.accept(ModBlock.DRAGONE_ORE.get());
+
+                        pOutput.accept(ModBlock.EXTRACTOR_BLOCK.get());
+                        pOutput.accept(ModBlock.EXTRACTOR_CASING.get());
+                        pOutput.accept(ModBlock.EXTRACTOR_FRAME.get());
                     })
                     .build()
     );

@@ -7,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "item": "lumeritemod:lumerite_frag"
+      "item": "lumeritemod:lumerite_nugget"
     }
   },
   "result": {
-    "item": "lumeritemod:lumerite_nugget"
+    "item": "lumeritemod:lumerite_frag"
   }
 }

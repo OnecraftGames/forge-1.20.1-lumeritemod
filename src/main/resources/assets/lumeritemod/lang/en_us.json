@@ -4,9 +4,14 @@
  "item.lumeritemod.lumerite_frag": "Lumerite Frag",
  "item.lumeritemod.dragone_ingot": "Dragone Ingot",
  "item.lumeritemod.dragone_compressed": "Dragone Compressed",
- "item.lumeritemod.dragone_heart": "Dragon heart",
+ "item.lumeritemod.dragone_heart": "Dragon Heart",
 
  "block.lumeritemod.dragone_block": "Dragone Block",
+ "block.lumeritemod.dragone_ore": "Dragone Ore",
+
+ "block.lumeritemod.extractor_block": "Extractor Block",
+ "block.lumeritemod.extractor_block_casing": "Extractor Block Casing",
+ "block.lumeritemod.extractor_block_frame": "Extractor Block Frame",
 
  "creative_mode_tab.lumerite_tab": "Lumerite Mod"
 }

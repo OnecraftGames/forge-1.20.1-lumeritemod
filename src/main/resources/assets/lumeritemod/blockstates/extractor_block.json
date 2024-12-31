@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "lumeritemod:block/extractor_block"
+    }
+  }
+}
