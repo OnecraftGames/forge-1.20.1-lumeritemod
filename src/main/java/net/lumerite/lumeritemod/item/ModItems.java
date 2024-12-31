@@ -1,6 +1,7 @@
 package net.lumerite.lumeritemod.item;
 
 import net.lumerite.lumeritemod.LumeriteMod;
+import net.lumerite.lumeritemod.item.custom.DragonePickaxe;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,6 +29,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> DRAGONE_HEART = ITEMS_BUILDER.register("dragone_heart",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> DRAGONE_PICKAXE = ITEMS_BUILDER.register("dragone_pickaxe",
+            DragonePickaxe::new);
 
 
     public static void register(IEventBus e) {
