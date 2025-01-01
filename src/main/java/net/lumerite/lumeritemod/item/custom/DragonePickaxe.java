@@ -1,13 +1,12 @@
 package net.lumerite.lumeritemod.item.custom;
 
-import net.lumerite.lumeritemod.item.tiers.DragoneTiers;
-import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.state.BlockState;
+import net.lumerite.lumeritemod.item.tiers.DragonePickaxeTiers;
+import net.minecraft.world.item.PickaxeItem;
+import net.minecraft.world.item.Item;
 
 public class DragonePickaxe extends PickaxeItem {
 
     public DragonePickaxe() {
-        super(new DragoneTiers(), 1, -2.8F, new Item.Properties());
+        super(new DragonePickaxeTiers(), 1, -2.8F, new Item.Properties());
     }
 }

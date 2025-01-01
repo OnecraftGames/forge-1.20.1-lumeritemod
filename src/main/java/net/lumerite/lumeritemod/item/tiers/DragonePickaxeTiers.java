@@ -1,12 +1,11 @@
 package net.lumerite.lumeritemod.item.tiers;
 
+import net.lumerite.lumeritemod.item.ModItems;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 
-public class DragoneTiers implements Tier {
+public class DragonePickaxeTiers implements Tier {
 
     @Override
     public int getUses() {
@@ -35,7 +34,7 @@ public class DragoneTiers implements Tier {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.of(new Item[]{/* Votre Item ici, par exemple : Items.DIAMOND */});
+        return Ingredient.of(new Item[]{ModItems.DRAGONE_INGOT.get()/* Votre Item ici, par exemple : Items.DIAMOND */});
     }
 
 }

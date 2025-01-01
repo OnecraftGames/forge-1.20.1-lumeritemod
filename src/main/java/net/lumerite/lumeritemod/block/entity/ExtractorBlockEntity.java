@@ -148,7 +148,7 @@ public class ExtractorBlockEntity extends BlockEntity implements MenuProvider {
         ItemStack result = new ItemStack(ModItems.DRAGONE_INGOT.get(), 4);
         ItemStack resultFrag = new ItemStack(ModItems.LUMERITE_NUGGET.get(), 1);
         this.itemHandler.extractItem(INPUT_SLOT, 1, false);
-        this.itemHandler.extractItem(INPUT_SLOT_CHARGED, 10, false);
+        this.itemHandler.extractItem(INPUT_SLOT_CHARGED, 1, false);
 
         int n = (int) (Math.random() * 5);
 
@@ -163,7 +163,7 @@ public class ExtractorBlockEntity extends BlockEntity implements MenuProvider {
 
     private boolean hasPowerCompressedDradon() {
         boolean isDragonCompressed = this.itemHandler.getStackInSlot(INPUT_SLOT_CHARGED).getItem() == ModItems.DRAGONE_COMPRESSED.get();
-        boolean countOfDragonCompressed = this.itemHandler.getStackInSlot(INPUT_SLOT_CHARGED).getCount() >= 10;
+        boolean countOfDragonCompressed = this.itemHandler.getStackInSlot(INPUT_SLOT_CHARGED).getCount() >= 1;
 
         return isDragonCompressed && countOfDragonCompressed;
     }

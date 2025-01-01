@@ -2,6 +2,9 @@
   "replace": false,
   "values": [
     "lumeritemod:dragone_block",
-    "lumeritemod:dragone_ore"
+    "lumeritemod:dragone_ore",
+    "lumeritemod:extractor_block",
+    "lumeritemod:extractor_block_casing",
+    "lumeritemod:extractor_block_frame"
   ]
 }

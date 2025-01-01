@@ -36,6 +36,10 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlock.EXTRACTOR_FRAME.get());
 
                         pOutput.accept(ModItems.DRAGONE_PICKAXE.get());
+                        pOutput.accept(ModItems.DRAGONE_AXE.get());
+                        pOutput.accept(ModItems.DRAGONE_SHOVEL.get());
+
+                        pOutput.accept(ModItems.DRAGONE_HAMMER.get());
                     })
                     .build()
     );
