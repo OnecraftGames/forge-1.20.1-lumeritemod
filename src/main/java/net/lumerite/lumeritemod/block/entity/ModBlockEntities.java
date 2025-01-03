@@ -17,6 +17,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(ExtractorBlockEntity::new,
                             ModBlock.EXTRACTOR_BLOCK.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<DragoneCrafterEntity>> DRAGONE_CRAFTER_BE =
+            BLOCK_ENTITIES.register("dragone_crafter_be", () ->
+                    BlockEntityType.Builder.of(DragoneCrafterEntity::new,
+                            ModBlock.DRAGONE_CRAFTER.get()).build(null));
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

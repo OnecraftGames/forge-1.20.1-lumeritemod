@@ -1,10 +1,9 @@
 package net.lumerite.lumeritemod.item;
 
 import net.lumerite.lumeritemod.LumeriteMod;
-import net.lumerite.lumeritemod.item.custom.DragoneAxe;
-import net.lumerite.lumeritemod.item.custom.DragoneHammer;
-import net.lumerite.lumeritemod.item.custom.DragonePickaxe;
-import net.lumerite.lumeritemod.item.custom.DragoneShovel;
+import net.lumerite.lumeritemod.item.armor.DragoneArmorItem;
+import net.lumerite.lumeritemod.item.armor.DragoneArmorMaterial;
+import net.lumerite.lumeritemod.item.custom.*;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -45,6 +44,20 @@ public class ModItems {
     public static final RegistryObject<Item> DRAGONE_HAMMER = ITEMS_BUILDER.register("dragone_hammer",
             DragoneHammer::new);
 
+    public static final RegistryObject<Item> DRAGONE_SWORD = ITEMS_BUILDER.register("dragone_sword",
+            DragoneSword::new);
+
+    public static final RegistryObject<Item> DRAGONE_HELMET = ITEMS_BUILDER.register("dragone_helmet",
+            () -> new DragoneArmorItem(new DragoneArmorMaterial(), DragoneArmorItem.Type.HELMET, new Item.Properties()));
+
+    public static final RegistryObject<Item> DRAGONE_CHESTPLATE = ITEMS_BUILDER.register("dragone_chestplate",
+            () -> new DragoneArmorItem(new DragoneArmorMaterial(), DragoneArmorItem.Type.CHESTPLATE, new Item.Properties()));
+
+    public static final RegistryObject<Item> DRAGONE_LEGGINGS = ITEMS_BUILDER.register("dragone_leggings",
+            () -> new DragoneArmorItem(new DragoneArmorMaterial(), DragoneArmorItem.Type.LEGGINGS, new Item.Properties()));
+
+    public static final RegistryObject<Item> DRAGONE_BOOTS = ITEMS_BUILDER.register("dragone_boots",
+            () -> new DragoneArmorItem(new DragoneArmorMaterial(), DragoneArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static void register(IEventBus e) {
         ITEMS_BUILDER.register(e);

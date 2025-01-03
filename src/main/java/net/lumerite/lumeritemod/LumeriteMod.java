@@ -6,6 +6,7 @@ import net.lumerite.lumeritemod.block.entity.ModBlockEntities;
 import net.lumerite.lumeritemod.item.ModCreativeModTabs;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.lumerite.lumeritemod.screen.ModMenuTypes;
+import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterScreen;
 import net.lumerite.lumeritemod.screen.extractorblock.ExtractorScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraftforge.api.distmarker.Dist;
@@ -76,6 +77,7 @@ public class LumeriteMod
         public static void onClientSetup(FMLClientSetupEvent event)
         {
             MenuScreens.register(ModMenuTypes.EXTRACTOR_MENU.get(), ExtractorScreen::new);
+            MenuScreens.register(ModMenuTypes.DragoneCrafterMenu.get(), DragoneCrafterScreen::new);
         }
     }
 }

@@ -38,8 +38,16 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.DRAGONE_PICKAXE.get());
                         pOutput.accept(ModItems.DRAGONE_AXE.get());
                         pOutput.accept(ModItems.DRAGONE_SHOVEL.get());
-
+                        pOutput.accept(ModItems.DRAGONE_SWORD.get());
                         pOutput.accept(ModItems.DRAGONE_HAMMER.get());
+
+                        pOutput.accept(ModItems.DRAGONE_HELMET.get());
+                        pOutput.accept(ModItems.DRAGONE_CHESTPLATE.get());
+                        pOutput.accept(ModItems.DRAGONE_LEGGINGS.get());
+                        pOutput.accept(ModItems.DRAGONE_BOOTS.get());
+
+                        pOutput.accept(ModBlock.DRAGONE_CRAFTER.get());
+
                     })
                     .build()
     );

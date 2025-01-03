@@ -1,17 +1,31 @@
 {
-  "item.lumeritemod.lumerite_ingot": "Lingot de Lumerite",
-  "item.lumeritemod.lumerite_nugget": "Pépite de Lumerite",
-  "item.lumeritemod.lumerite_frag": "Fragment de Lumerite",
-  "item.lumeritemod.dragone_ingot": "Lingot de Dragone",
-  "item.lumeritemod.dragone_compressed": "Dragone Compressé",
-  "item.lumeritemod.dragone_heart": "Coeur de Dragone",
+    "item.lumeritemod.lumerite_ingot": "Lingot de Lumerite",
+    "item.lumeritemod.lumerite_nugget": "Pépite de Lumerite",
+    "item.lumeritemod.lumerite_frag": "Fragment de Lumerite",
+    "item.lumeritemod.dragone_ingot": "Lingot de Dragone",
+    "item.lumeritemod.dragone_compressed": "Dragone Compressé",
+    "item.lumeritemod.dragone_heart": "Coeur de Dragone",
 
-  "block.lumeritemod.dragone_block": "Bloc de Dragone",
-  "block.lumeritemod.dragone_ore": "Minerai de Dragone",
+    "block.lumeritemod.dragone_block": "Bloc de Dragone",
+    "block.lumeritemod.dragone_ore": "Minerai de Dragone",
 
-  "block.lumeritemod.extractor_block": "Bloc d'Extracteur",
-  "block.lumeritemod.extractor_block_casing": "Enveloppe de Bloc d'Extracteur",
-  "block.lumeritemod.extractor_block_frame": "Cadre de Bloc d'Extracteur",
+    "item.lumeritemod.dragone_pickaxe": "Pioche en Dragone",
+    "item.lumeritemod.dragone_axe": "Hache en Dragone",
+    "item.lumeritemod.dragone_shovel": "Pelle en Dragone",
+    "item.lumeritemod.dragone_sword": "Épée en Dragone",
+    "item.lumeritemod.dragone_hammer": "Marteau en Dragone",
 
-  "creative_mode_tab.lumerite_tab": "Lumerite Mod"
+    "item.lumeritemod.dragone_helmet": "Casque en Dragone",
+    "item.lumeritemod.dragone_chestplate": "Plastron en Dragone",
+    "item.lumeritemod.dragone_leggings": "Jambière en Dragone",
+    "item.lumeritemod.dragone_boots": "Bottes de Dragone",
+
+    "block.lumeritemod.extractor_block": "Bloc d'Extracteur",
+    "block.lumeritemod.extractor_block_casing": "Enveloppe de Bloc d'Extracteur",
+    "block.lumeritemod.extractor_block_frame": "Cadre de Bloc d'Extracteur",
+
+    "tooltip.dragone_helmet": "§6 • Ajoute vision nocturne",
+    "tooltip.dragone_hammer": "§6 • Casse les blocs en 3x3",
+
+    "creative_mode_tab.lumerite_tab": "Lumerite Mod"
 }

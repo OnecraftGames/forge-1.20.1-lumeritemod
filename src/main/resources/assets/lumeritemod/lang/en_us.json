@@ -1,17 +1,31 @@
 {
- "item.lumeritemod.lumerite_ingot": "Lumerite Ingot",
- "item.lumeritemod.lumerite_nugget": "Lumerite Nugget",
- "item.lumeritemod.lumerite_frag": "Lumerite Frag",
- "item.lumeritemod.dragone_ingot": "Dragone Ingot",
- "item.lumeritemod.dragone_compressed": "Dragone Compressed",
- "item.lumeritemod.dragone_heart": "Dragon Heart",
+    "item.lumeritemod.lumerite_ingot": "Lumerite Ingot",
+    "item.lumeritemod.lumerite_nugget": "Lumerite Nugget",
+    "item.lumeritemod.lumerite_frag": "Lumerite Frag",
+    "item.lumeritemod.dragone_ingot": "Dragone Ingot",
+    "item.lumeritemod.dragone_compressed": "Dragone Compressed",
+    "item.lumeritemod.dragone_heart": "Dragon Heart",
 
- "block.lumeritemod.dragone_block": "Dragone Block",
- "block.lumeritemod.dragone_ore": "Dragone Ore",
+    "block.lumeritemod.dragone_block": "Dragone Block",
+    "block.lumeritemod.dragone_ore": "Dragone Ore",
 
- "block.lumeritemod.extractor_block": "Extractor Block",
- "block.lumeritemod.extractor_block_casing": "Extractor Block Casing",
- "block.lumeritemod.extractor_block_frame": "Extractor Block Frame",
+    "item.lumeritemod.dragone_pickaxe": "Dragone Pickaxe",
+    "item.lumeritemod.dragone_axe": "Dragone Axe",
+    "item.lumeritemod.dragone_shovel": "Dragone Shovel",
+    "item.lumeritemod.dragone_sword": "Dragone Sword",
+    "item.lumeritemod.dragone_hammer": "Dragone Hammer",
 
- "creative_mode_tab.lumerite_tab": "Lumerite Mod"
+    "item.lumeritemod.dragone_helmet": "Dragone Helmet",
+    "item.lumeritemod.dragone_chestplate": "Dragone Chestplate",
+    "item.lumeritemod.dragone_leggings": "Dragone Leggings",
+    "item.lumeritemod.dragone_boots": "Dragone Boots",
+
+    "block.lumeritemod.extractor_block": "Extractor Block",
+    "block.lumeritemod.extractor_block_casing": "Extractor Block Casing",
+    "block.lumeritemod.extractor_block_frame": "Extractor Block Frame",
+
+    "tooltip.dragone_helmet": "§6 • Adds night vision",
+    "tooltip.dragone_hammer": "§6 • Breaks blocks in 3x3",
+
+    "creative_mode_tab.lumerite_tab": "Lumerite Mod"
 }

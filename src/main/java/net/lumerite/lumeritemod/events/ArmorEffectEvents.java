@@ -1,0 +1,33 @@
+package net.lumerite.lumeritemod.events;
+
+import net.lumerite.lumeritemod.item.ModItems;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.common.Mod;
+
+@Mod.EventBusSubscriber(modid = "lumeritemod", bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+public class ArmorEffectEvents {
+
+    @SubscribeEvent
+    public static void PlayerTickEvent(TickEvent.PlayerTickEvent event) {
+
+        if (event.phase == TickEvent.Phase.START) {
+            Player player = event.player;
+            ItemStack helmet = player.getInventory().armor.get(3);
+
+            if (helmet.getItem() == ModItems.DRAGONE_HELMET.get()) {
+                player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1000, 1, true, false, false));
+
+            } else {
+                player.removeEffect(MobEffects.NIGHT_VISION);
+            }
+        }
+
+    }
+
+}

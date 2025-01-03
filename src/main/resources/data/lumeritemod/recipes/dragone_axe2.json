@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " ##",
+    " /#",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "item": "lumeritemod:dragone_ingot"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "lumeritemod:dragone_axe"
+  }
+}

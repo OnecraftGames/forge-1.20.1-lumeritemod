@@ -74,7 +74,7 @@ public class ExtractorBlock extends BaseEntityBlock {
                 } else {
                     throw new IllegalStateException("Our Container provider is missing!");
 
-            }
+                }
 
 
         }
