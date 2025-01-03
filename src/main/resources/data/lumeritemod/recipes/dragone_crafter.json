@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "@@@",
+    "@#@",
+    "@@@"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:crafting_table"
+    },
+    "@": {
+      "item": "lumeritemod:dragone_ingot"
+    }
+  },
+  "result": {
+    "item": "lumeritemod:dragone_crafter"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "lumeritemod:block/dragone_crafter",
+    "east": "lumeritemod:block/dragone_crafter",
+    "north": "lumeritemod:block/dragone_crafter",
+    "particle": "lumeritemod:block/dragone_crafter",
+    "south": "lumeritemod:block/dragone_crafter",
+    "up": "lumeritemod:block/dragone_crafter_top",
+    "west": "lumeritemod:block/dragone_crafter"
+  }
+}

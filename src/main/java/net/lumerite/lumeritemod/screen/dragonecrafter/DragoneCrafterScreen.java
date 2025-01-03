@@ -12,7 +12,7 @@ import net.minecraft.world.entity.player.Inventory;
 public class DragoneCrafterScreen extends AbstractContainerScreen<DragoneCrafterMenu> {
 
     private static final ResourceLocation TEXTURE =
-            new ResourceLocation(LumeriteMod.MOD_ID, "textures/gui/extractor_gui_final.png");
+            new ResourceLocation(LumeriteMod.MOD_ID, "textures/gui/dragone_crafter_gui.png");
 
     public DragoneCrafterScreen(DragoneCrafterMenu pMenu, Inventory pPlayerInventory, Component pTitle) {
         super(pMenu, pPlayerInventory, pTitle);
@@ -31,9 +31,9 @@ public class DragoneCrafterScreen extends AbstractContainerScreen<DragoneCrafter
         RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.setShaderTexture(0, TEXTURE);
         int x = (width - imageWidth) / 2;
-        int y = (height - imageHeight) / 2;
+        int y = (height - 201) / 2;
 
-        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, imageHeight);
+        guiGraphics.blit(TEXTURE, x, y, 0, 0, imageWidth, 201);
 
         renderProgressArrow(guiGraphics, x, y);
     }
@@ -43,14 +43,14 @@ public class DragoneCrafterScreen extends AbstractContainerScreen<DragoneCrafter
         pGuiGraphics.drawString(this.font,
                 this.playerInventoryTitle.getString(),
                 7,
-                this.getYSize() - 93,
+                 90,
                 0x808080,
                 false
         );
         pGuiGraphics.drawString(this.font,
                 this.title.getString(),
                 7,
-                7,
+                -13,
                 0x808080,
                 false
         );

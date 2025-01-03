@@ -27,5 +27,7 @@
     "tooltip.dragone_helmet": "§6 • Adds night vision",
     "tooltip.dragone_hammer": "§6 • Breaks blocks in 3x3",
 
+    "block.lumeritemod.dragone_crafter": "Dragone Crafter",
+
     "creative_mode_tab.lumerite_tab": "Lumerite Mod"
 }

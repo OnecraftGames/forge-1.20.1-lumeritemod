@@ -5,6 +5,7 @@
     "lumeritemod:dragone_ore",
     "lumeritemod:extractor_block",
     "lumeritemod:extractor_block_casing",
-    "lumeritemod:extractor_block_frame"
+    "lumeritemod:extractor_block_frame",
+    "lumeritemod:dragone_crafter"
   ]
 }
