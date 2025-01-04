@@ -2,13 +2,23 @@
   "recipes": [
     {
       "inputs": [
-        { "slot": 0, "item": "minecraft:iron_ingot", "count": 2 },
-        { "slot": 1, "item": "minecraft:diamond", "count": 1 },
-        { "slot": 2, "item": "minecraft:gold_ingot", "count": 1 },
-        { "slot": 3, "item": "minecraft:netherite_ingot", "count": 1 },
-        { "slot": 4, "item": "minecraft:redstone", "count": 3 }
+        { "slot": 0, "item": "minecraft:stick", "count": 1 },
+        { "slot": 1, "item": "lumeritemod:dragone_ingot", "count": 1 },
+        { "slot": 2, "item": "lumeritemod:dragone_ingot", "count": 1 },
+        { "slot": 3, "item": "lumeritemod:dragone_ingot", "count": 1 },
+        { "slot": 4, "item": "lumeritemod:dragone_ingot", "count": 1 }
       ],
-      "output": { "item": "lumeritemod:dragone_compressed", "count": 1 }
+      "output": { "item": "lumeritemod:dragone_stick", "count": 1 }
+    },
+    {
+        "inputs": [
+            { "slot": 0, "item": "lumeritemod:dragone_stick", "count": 1 },
+            { "slot": 1, "item": "lumeritemod:dragone_axe", "count": 1 },
+            { "slot": 2, "item": "lumeritemod:dragone_axe", "count": 1 },
+            { "slot": 3, "item": "lumeritemod:dragone_ingot", "count": 1 },
+            { "slot": 4, "item": "lumeritemod:dragone_ingot", "count": 1 }
+        ],
+        "output": { "item": "lumeritemod:dragone_hammer", "count": 1 }
     }
   ]
 }

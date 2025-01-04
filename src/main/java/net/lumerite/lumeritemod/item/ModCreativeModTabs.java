@@ -28,6 +28,8 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.DRAGONE_COMPRESSED.get());
                         pOutput.accept(ModItems.DRAGONE_HEART.get());
 
+                        pOutput.accept(ModItems.DRAGONE_STICK.get());
+
                         pOutput.accept(ModBlock.DRAGONE_BLOCK.get());
                         pOutput.accept(ModBlock.DRAGONE_ORE.get());
 

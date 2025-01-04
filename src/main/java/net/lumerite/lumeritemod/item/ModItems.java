@@ -59,6 +59,9 @@ public class ModItems {
     public static final RegistryObject<Item> DRAGONE_BOOTS = ITEMS_BUILDER.register("dragone_boots",
             () -> new DragoneArmorItem(new DragoneArmorMaterial(), DragoneArmorItem.Type.BOOTS, new Item.Properties()));
 
+    public static final RegistryObject<Item> DRAGONE_STICK = ITEMS_BUILDER.register("dragone_stick",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus e) {
         ITEMS_BUILDER.register(e);
     }
