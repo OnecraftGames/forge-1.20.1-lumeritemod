@@ -30,5 +30,8 @@
 
     "block.lumeritemod.dragone_crafter": "Crafter en Dragone",
 
+    "block.lumeritemod.dragone_slab": "Dalle de Dragone",
+    "block.lumeritemod.dragone_stairs": "Escalier de Dragone",
+
     "creative_mode_tab.lumerite_tab": "Lumerite Mod"
 }

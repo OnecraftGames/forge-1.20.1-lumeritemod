@@ -7,9 +7,7 @@ import net.lumerite.lumeritemod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -29,7 +27,11 @@ public class ModBlock {
     public static final RegistryObject<Block> DRAGONE_ORE = registerBlock("dragone_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).sound(SoundType.STONE)));
 
+    public static final RegistryObject<Block> DRAGONE_SLAB = registerBlock("dragone_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
+    public static final RegistryObject<Block> DRAGONE_STAIRS = registerBlock("dragone_stairs",
+            () -> new StairBlock(Blocks.STONE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
 
     public static final RegistryObject<Block> EXTRACTOR_BLOCK = registerBlock("extractor_block",

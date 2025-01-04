@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "type=bottom": { "model": "lumeritemod:block/dragone_slab" },
+    "type=top": { "model": "lumeritemod:block/dragone_slab_top" },
+    "type=double": { "model": "lumeritemod:block/dragone_block" }
+  }
+}
