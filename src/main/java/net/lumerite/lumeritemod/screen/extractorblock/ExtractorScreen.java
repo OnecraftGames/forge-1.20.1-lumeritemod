@@ -41,14 +41,14 @@ public class ExtractorScreen extends AbstractContainerScreen<ExtractorMenu> {
     protected void renderLabels(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY) {
         pGuiGraphics.drawString(this.font,
                 this.playerInventoryTitle.getString(),
-                7,
+                8,
                 this.getYSize() - 93,
                 0x808080,
                 false
         );
         pGuiGraphics.drawString(this.font,
                 this.title.getString(),
-                7,
+                8,
                 7,
                 0x808080,
                 false

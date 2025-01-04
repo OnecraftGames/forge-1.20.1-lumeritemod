@@ -36,6 +36,7 @@ public class DragoneHammer extends PickaxeItem {
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
         pTooltipComponents.add(Component.empty());
         pTooltipComponents.add(Component.translatable("tooltip.dragone_hammer"));
+        pTooltipComponents.add(Component.empty());
     }
 
     @Override

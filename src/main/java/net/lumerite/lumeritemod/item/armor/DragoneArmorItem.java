@@ -22,6 +22,7 @@ public class DragoneArmorItem extends ArmorItem {
         if (pStack.getItem() == ModItems.DRAGONE_HELMET.get()) {
             pTooltipComponents.add(Component.empty());
             pTooltipComponents.add(Component.translatable("tooltip.dragone_helmet"));
+            pTooltipComponents.add(Component.empty());
         }
 
     }

@@ -42,15 +42,15 @@ public class DragoneCrafterScreen extends AbstractContainerScreen<DragoneCrafter
     protected void renderLabels(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY) {
         pGuiGraphics.drawString(this.font,
                 this.playerInventoryTitle.getString(),
-                7,
+                8,
                  90,
                 0x808080,
                 false
         );
         pGuiGraphics.drawString(this.font,
                 this.title.getString(),
-                7,
-                -13,
+                8,
+                -12,
                 0x808080,
                 false
         );
@@ -59,7 +59,7 @@ public class DragoneCrafterScreen extends AbstractContainerScreen<DragoneCrafter
 
     private void renderProgressArrow(GuiGraphics guiGraphics, int x, int y) {
         if(menu.isCrafting()) {
-            guiGraphics.blit(TEXTURE, x + 88, y + 34, 176, 0, menu.getScaledProgress(), 18);
+            guiGraphics.blit(TEXTURE, x + 98, y + 52, 176, 0, menu.getScaledProgress(), 18);
         }
     }
 

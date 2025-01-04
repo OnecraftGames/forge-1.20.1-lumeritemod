@@ -2,11 +2,15 @@ package net.lumerite.lumeritemod.block.entity;
 
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.lumerite.lumeritemod.item.ModItems;
+import net.lumerite.lumeritemod.managers.DragoneCrafterRecipesManager;
 import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -26,14 +30,17 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import oshi.util.tuples.Pair;
 
 public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
-    private final ItemStackHandler itemHandler = new ItemStackHandler(4);
+    private final ItemStackHandler itemHandler = new ItemStackHandler(6);
 
-    private static final int INPUT_SLOT = 0;   //
-    private static final int INPUT_SLOT_CHARGED = 1; //
-    private static final int OUTPUT_SLOT_INGOT = 2; //
-    private static final int OUTPUT_SLOT_FRAG = 3; //
+    private static final int INPUT_SLOT_1 = 0;   //
+    private static final int INPUT_SLOT_2 = 1; //
+    private static final int INPUT_SLOT_3 = 2; //
+    private static final int INPUT_SLOT_4 = 3; //
+    private static final int INPUT_SLOT_5 = 4; //
+    private static final int OUTPUT_SLOT = 5; //
 
 
 
@@ -65,7 +72,7 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
 
             @Override
             public int getCount() {
-                return 3;
+                return 6;
             }
         };
     }
@@ -79,10 +86,14 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
         return super.getCapability(cap, side);
     }
 
+    private final DragoneCrafterRecipesManager recipeManager = new DragoneCrafterRecipesManager();
+
     @Override
     public void onLoad() {
         super.onLoad();
         lazyItemHandler = LazyOptional.of(() -> itemHandler);
+
+        recipeManager.loadRecipes();
     }
 
     @Override
@@ -128,15 +139,17 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
 
         if (!pLevel.isClientSide()) {
-            if (hasRecipe() && hasPowerCompressedDradon()) { // condition à changer
-                increaseCraftingProgress();
-                if (hasProgressFinished()) {
-                    craftItem();
-                    resetProgress();
+            for (DragoneCrafterRecipesManager.Recipe recipe : recipeManager.getRecipes()) {
+                if (matchesRecipe(recipe)) {
+                    increaseCraftingProgress();
+                    if (hasProgressFinished()) {
+                        craftItem(recipe);
+                        resetProgress();
+                    }
+                    return; // Arrête après avoir trouvé une recette correspondante
                 }
-            } else {
-                resetProgress();
             }
+            resetProgress();
         }
     }
 
@@ -144,21 +157,19 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
         progress = 0;
     }
 
-    private void craftItem() {
-        ItemStack result = new ItemStack(ModItems.DRAGONE_INGOT.get(), 4);
-        ItemStack resultFrag = new ItemStack(ModItems.LUMERITE_NUGGET.get(), 1);
-        this.itemHandler.extractItem(INPUT_SLOT, 1, false);
-        this.itemHandler.extractItem(INPUT_SLOT_CHARGED, 1, false);
+    private void craftItem(DragoneCrafterRecipesManager.Recipe recipe) {
 
-        int n = (int) (Math.random() * 5);
-
-        if (n == 1) {
-            this.itemHandler.setStackInSlot(OUTPUT_SLOT_FRAG, new ItemStack(resultFrag.getItem(),
-                    this.itemHandler.getStackInSlot(OUTPUT_SLOT_FRAG).getCount() + resultFrag.getCount()));
+        // Consomme les ingrédients
+        for (Pair<Integer, ItemStack> entry : recipe.inputs) {
+            int slot = entry.getA();
+            int count = entry.getB().getCount();
+            itemHandler.extractItem(slot, count, false);
         }
 
-        this.itemHandler.setStackInSlot(OUTPUT_SLOT_INGOT, new ItemStack(result.getItem(),
-                this.itemHandler.getStackInSlot(OUTPUT_SLOT_INGOT).getCount() + result.getCount()));
+        // Ajoute l'item de sortie
+        ItemStack output = recipe.output;
+        itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
+                itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + output.getCount()));
     }
 
 
@@ -166,28 +177,37 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
     ///
     ///
 
-    private boolean hasPowerCompressedDradon() {
-        boolean isDragonCompressed = this.itemHandler.getStackInSlot(INPUT_SLOT_CHARGED).getItem() == ModItems.DRAGONE_COMPRESSED.get();
-        boolean countOfDragonCompressed = this.itemHandler.getStackInSlot(INPUT_SLOT_CHARGED).getCount() >= 1;
-
-        return isDragonCompressed && countOfDragonCompressed;
-    }
-
     private boolean hasRecipe() {
-        boolean hasCraftingItem = this.itemHandler.getStackInSlot(INPUT_SLOT).getItem() == ModBlock.DRAGONE_BLOCK.get().asItem();
-        ItemStack result = new ItemStack(ModItems.DRAGONE_INGOT.get());
-
-        return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        for (DragoneCrafterRecipesManager.Recipe recipe : recipeManager.getRecipes()) {
+            if (matchesRecipe(recipe)) {
+                return true;
+            }
+        }
+        return false;
     }
+
+    private boolean matchesRecipe(DragoneCrafterRecipesManager.Recipe recipe) {
+        for (Pair<Integer, ItemStack> entry : recipe.inputs) {
+            int slot = entry.getA();
+            ItemStack required = entry.getB();
+            ItemStack provided = itemHandler.getStackInSlot(slot);
+
+            if (!ItemStack.isSameItem(required, provided) || provided.getCount() < required.getCount()) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     /// ////////////////////////////////////////////////////
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
-        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_INGOT).isEmpty() || this.itemHandler.getStackInSlot(OUTPUT_SLOT_INGOT).is(item);
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() || this.itemHandler.getStackInSlot(OUTPUT_SLOT).is(item);
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
-        return this.itemHandler.getStackInSlot(OUTPUT_SLOT_INGOT).getCount() + count <= this.itemHandler.getStackInSlot(OUTPUT_SLOT_INGOT).getMaxStackSize();
+        return this.itemHandler.getStackInSlot(OUTPUT_SLOT).getCount() + count <= this.itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
     }
 
     private boolean hasProgressFinished() {
