@@ -2,6 +2,7 @@ package net.lumerite.lumeritemod.block;
 
 import net.lumerite.lumeritemod.LumeriteMod;
 import net.lumerite.lumeritemod.block.custom.DragoneCrafter;
+import net.lumerite.lumeritemod.block.custom.DragoneGlass;
 import net.lumerite.lumeritemod.block.custom.ExtractorBlock;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.minecraft.core.registries.Registries;
@@ -32,6 +33,9 @@ public class ModBlock {
 
     public static final RegistryObject<Block> DRAGONE_STAIRS = registerBlock("dragone_stairs",
             () -> new StairBlock(Blocks.STONE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> DRAGONE_GLASS = registerBlock("dragone_glass",
+            DragoneGlass::new);
 
 
     public static final RegistryObject<Block> EXTRACTOR_BLOCK = registerBlock("extractor_block",

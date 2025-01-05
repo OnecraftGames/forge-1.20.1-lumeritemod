@@ -3,6 +3,7 @@ package net.lumerite.lumeritemod;
 import com.mojang.logging.LogUtils;
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.lumerite.lumeritemod.block.entity.ModBlockEntities;
+import net.lumerite.lumeritemod.events.ClientSetup;
 import net.lumerite.lumeritemod.item.ModCreativeModTabs;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.lumerite.lumeritemod.screen.ModMenuTypes;
@@ -78,6 +79,8 @@ public class LumeriteMod
         {
             MenuScreens.register(ModMenuTypes.EXTRACTOR_MENU.get(), ExtractorScreen::new);
             MenuScreens.register(ModMenuTypes.DragoneCrafterMenu.get(), DragoneCrafterScreen::new);
+
+            ClientSetup.init(event);
         }
     }
 }

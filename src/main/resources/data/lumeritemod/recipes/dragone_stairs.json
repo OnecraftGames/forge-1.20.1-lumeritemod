@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "lumeritemod:dragone_ingot"
+    }
+  },
+  "result": {
+    "item": "lumeritemod:dragone_stairs",
+    "count": 4
+  }
+}

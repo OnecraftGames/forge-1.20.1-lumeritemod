@@ -27,11 +27,14 @@
 
     "tooltip.dragone_helmet": "§6 • Adds night vision",
     "tooltip.dragone_hammer": "§6 • Breaks blocks in 3x3",
+    "tooltip.dragone_glass": "§6 • Reinforced glass, explosion resistant",
 
     "block.lumeritemod.dragone_crafter": "Dragone Crafter",
 
     "block.lumeritemod.dragone_slab": "Dragone Slab",
     "block.lumeritemod.dragone_stairs": "Dragone Stairs",
+
+    "block.lumeritemod.dragone_glass": "Dragone Glass",
 
     "creative_mode_tab.lumerite_tab": "Lumerite Mod"
 }
