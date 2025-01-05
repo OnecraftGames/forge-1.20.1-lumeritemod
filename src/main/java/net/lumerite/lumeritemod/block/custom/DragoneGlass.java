@@ -1,5 +1,6 @@
 package net.lumerite.lumeritemod.block.custom;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -10,6 +11,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlassBlock;
@@ -25,13 +27,16 @@ import java.util.List;
 
 public class DragoneGlass extends Block {
     public DragoneGlass() {
-        super(BlockBehaviour.Properties.copy(Blocks.STONE)
+        super(BlockBehaviour.Properties.copy(Blocks.GLASS)
                 .sound(SoundType.GLASS)// Matériau du bloc
-                .strength(30f, 50.0f)
-                .noOcclusion() // Pas d'occlusion pour permettre la vision à travers
+                .strength(50f, 20.0f)
+                .noOcclusion()
                 .isSuffocating((state, level, pos) -> false) // Ne bloque pas la vue
-                .isViewBlocking((state, level, pos) -> false));
+                .isViewBlocking((state, level, pos) -> false)
+                .lightLevel(state -> 0));
     }
+
+
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
@@ -48,6 +53,11 @@ public class DragoneGlass extends Block {
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
         return Block.box(0, 0, 0, 16, 16, 16); // Forme complète pour la boîte de sélection
+    }
+
+    @Override
+    public int getLightBlock(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
+        return 0;
     }
 
     @Override

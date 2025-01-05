@@ -19,12 +19,20 @@ public class ArmorEffectEvents {
         if (event.phase == TickEvent.Phase.START) {
             Player player = event.player;
             ItemStack helmet = player.getInventory().armor.get(3);
+            ItemStack boots = player.getInventory().armor.get(0);
 
             if (helmet.getItem() == ModItems.DRAGONE_HELMET.get()) {
                 player.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 1000, 1, true, false, false));
 
             } else {
                 player.removeEffect(MobEffects.NIGHT_VISION);
+            }
+
+            if (boots.getItem() == ModItems.DRAGONE_BOOTS.get()) {
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1000, 1, true, false, false));
+
+            } else {
+                player.removeEffect(MobEffects.MOVEMENT_SPEED);
             }
         }
 

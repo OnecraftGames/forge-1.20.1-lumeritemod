@@ -1,16 +1,6 @@
 {
   "recipes": [
     {
-      "inputs": [
-        { "slot": 0, "item": "minecraft:stick", "count": 1 },
-        { "slot": 1, "item": "lumeritemod:dragone_ingot", "count": 1 },
-        { "slot": 2, "item": "lumeritemod:dragone_ingot", "count": 1 },
-        { "slot": 3, "item": "lumeritemod:dragone_ingot", "count": 1 },
-        { "slot": 4, "item": "lumeritemod:dragone_ingot", "count": 1 }
-      ],
-      "output": { "item": "lumeritemod:dragone_stick", "count": 1 }
-    },
-    {
         "inputs": [
             { "slot": 0, "item": "lumeritemod:dragone_stick", "count": 1 },
             { "slot": 1, "item": "lumeritemod:dragone_axe", "count": 1 },
