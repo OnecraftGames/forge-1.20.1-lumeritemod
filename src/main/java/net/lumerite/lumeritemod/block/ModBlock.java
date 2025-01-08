@@ -8,6 +8,7 @@ import net.lumerite.lumeritemod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,18 +40,17 @@ public class ModBlock {
 
 
     public static final RegistryObject<Block> EXTRACTOR_BLOCK = registerBlock("extractor_block",
-            () -> new ExtractorBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+            () -> new ExtractorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> EXTRACTOR_CASING = registerBlock("extractor_block_casing",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> EXTRACTOR_FRAME = registerBlock("extractor_block_frame",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 
 
     public static final RegistryObject<Block> DRAGONE_CRAFTER = registerBlock("dragone_crafter",
-            () -> new DragoneCrafter(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
-
+            () -> new DragoneCrafter(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL).sound(SoundType.WOOD)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS_BUILDER.register(name, block);

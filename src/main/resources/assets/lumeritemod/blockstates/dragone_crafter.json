@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "age=0": {
       "model": "lumeritemod:block/dragone_crafter"
+    },
+    "age=1": {
+      "model": "lumeritemod:block/dragone_crafter_iron"
     }
   }
 }

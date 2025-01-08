@@ -1,6 +1,8 @@
 package net.lumerite.lumeritemod.block.entity;
 
+import com.mojang.authlib.properties.Property;
 import net.lumerite.lumeritemod.block.ModBlock;
+import net.lumerite.lumeritemod.block.constructor.DragoneCrafterConstructor;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.lumerite.lumeritemod.managers.DragoneCrafterRecipesManager;
 import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterMenu;
@@ -10,6 +12,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
@@ -22,6 +25,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
@@ -49,9 +53,13 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
     protected final ContainerData data;
     private int progress = 0;
     private int maxProgress = 78;
+    private long timePlaced;
+    private Player player;
+
 
     public DragoneCrafterEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.DRAGONE_CRAFTER_BE.get(), pPos, pBlockState);
+        this.timePlaced = System.currentTimeMillis();
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
@@ -75,6 +83,10 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
                 return 6;
             }
         };
+    }
+
+    public long getTimeElapsed() {
+        return System.currentTimeMillis() - timePlaced;
     }
 
     @Override
@@ -118,6 +130,12 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+
+        if (player == null) {
+            player = pPlayer;
+            pPlayer.sendSystemMessage(Component.translatable("chat.lumeritemod.assign_to_player").setStyle(Style.EMPTY.withItalic(true)));
+        }
+
         return new DragoneCrafterMenu(pContainerId, pPlayerInventory, this, this.data);
     }
 
@@ -125,6 +143,8 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
     protected void saveAdditional(CompoundTag pTag) {
         pTag.put("inventory", itemHandler.serializeNBT());
         pTag.putInt("crafter.progress", progress);
+        pTag.putLong("crafter.timePlaced", timePlaced);
+        pTag.putUUID("crafter.player", player.getUUID());
 
         super.saveAdditional(pTag);
     }
@@ -134,11 +154,34 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
         super.load(pTag);
         itemHandler.deserializeNBT(pTag.getCompound("inventory"));
         progress = pTag.getInt("crafter.progress");
+        timePlaced = pTag.getLong("crafter.timePlaced");
+        player = level.getPlayerByUUID(pTag.getUUID("crafter.player"));
     }
 
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
 
         if (!pLevel.isClientSide()) {
+
+            if (player != null) {
+                long elapsedSeconds = getTimeElapsed() / 1000;
+                int newAge = (int) Math.min(elapsedSeconds / 1000, 1);
+
+                if (pState.getValue(DragoneCrafterConstructor.AGE) != newAge) {
+
+                    pLevel.setBlock(pPos, pState.setValue(DragoneCrafterConstructor.AGE, newAge), 1);
+                    maxProgress = 40;
+                    player.sendSystemMessage(
+                            Component.translatable("chat.lumeritemod.dragone_crafter_upgrade")
+                                    .append(Component.literal("§7 lvl §6" + (newAge - 1))
+                                            .append(Component.literal("§7 -> lvl §6" + newAge))
+                                    )
+                    );
+                }
+            }
+
+
+
+
             for (DragoneCrafterRecipesManager.Recipe recipe : recipeManager.getRecipes()) {
                 if (matchesRecipe(recipe)) {
                     increaseCraftingProgress();

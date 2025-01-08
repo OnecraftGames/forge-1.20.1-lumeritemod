@@ -28,6 +28,10 @@
     "tooltip.dragone_helmet": "§6 • Ajoute vision nocturne",
     "tooltip.dragone_hammer": "§6 • Casse les blocs en 3x3",
     "tooltip.dragone_glass": "§6 • Verre renforcé, résistant aux explosions",
+    "tooltip.dragone_crafter_iron": "§6 • Améliore la vitesse de fabrication au niveau 1 \n obtenable au bout de 15 minutes posé au sol \n (niv 0 -> niv 1)",
+
+    "chat.lumeritemod.dragone_crafter_upgrade": "§7Votre crafter en dragon a évolué :",
+    "chat.lumeritemod.assign_to_player": "§7Ce bloc est maintenant votre crafter jusqu'a ce qu'il soit cassé :",
 
     "block.lumeritemod.dragone_crafter": "Crafter en Dragone",
 

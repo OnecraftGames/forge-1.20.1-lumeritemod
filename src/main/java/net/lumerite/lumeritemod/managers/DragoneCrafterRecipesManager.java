@@ -42,7 +42,6 @@ public class DragoneCrafterRecipesManager {
                 JsonObject json = JsonParser.parseReader(reader).getAsJsonObject();
 
                 // Traitez le JSON (par exemple, affichez son contenu)
-                System.out.println(json.toString());
 
                 JsonArray recipesArray = json.getAsJsonArray("recipes");
 
