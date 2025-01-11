@@ -6,10 +6,14 @@ import net.lumerite.lumeritemod.block.entity.ModBlockEntities;
 import net.lumerite.lumeritemod.events.ClientSetup;
 import net.lumerite.lumeritemod.item.ModCreativeModTabs;
 import net.lumerite.lumeritemod.item.ModItems;
+import net.lumerite.lumeritemod.item.entity.ModItemsEntities;
 import net.lumerite.lumeritemod.screen.ModMenuTypes;
 import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterScreen;
 import net.lumerite.lumeritemod.screen.extractorblock.ExtractorScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -37,7 +41,11 @@ public class LumeriteMod
     {
         IEventBus modEventBus = context.getModEventBus();
 
+
+
         ModItems.register(modEventBus);
+        ModItemsEntities.register(modEventBus);
+
         ModCreativeModTabs.register(modEventBus);
         ModBlock.register(modEventBus);
 
@@ -45,7 +53,6 @@ public class LumeriteMod
         ModBlockEntities.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
-
 
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -79,6 +86,9 @@ public class LumeriteMod
         {
             MenuScreens.register(ModMenuTypes.EXTRACTOR_MENU.get(), ExtractorScreen::new);
             MenuScreens.register(ModMenuTypes.DragoneCrafterMenu.get(), DragoneCrafterScreen::new);
+
+            EntityRenderers.register(ModItemsEntities.DYNAMITE_ENTITY.get(), ThrownItemRenderer::new);
+            EntityRenderers.register(ModItemsEntities.BIG_DYNAMITE_ENTITY.get(), ThrownItemRenderer::new);
 
             ClientSetup.init(event);
         }

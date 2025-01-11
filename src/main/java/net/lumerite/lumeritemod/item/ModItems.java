@@ -62,6 +62,12 @@ public class ModItems {
     public static final RegistryObject<Item> DRAGONE_STICK = ITEMS_BUILDER.register("dragone_stick",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> DYNAMITE = ITEMS_BUILDER.register("dynamite",
+            () -> new Dynamite(new Item.Properties()));
+
+    public static final RegistryObject<Item> BIG_DYNAMITE = ITEMS_BUILDER.register("big_dynamite",
+            () -> new BigDynamite(new Item.Properties()));
+
     public static void register(IEventBus e) {
         ITEMS_BUILDER.register(e);
     }

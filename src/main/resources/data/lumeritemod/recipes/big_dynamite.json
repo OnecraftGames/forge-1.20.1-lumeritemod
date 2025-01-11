@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "###",
+    "   "
+  ],
+  "key": {
+    "#": {
+      "item": "lumeritemod:dynamite"
+    }
+  },
+  "result": {
+    "item": "lumeritemod:big_dynamite"
+  }
+}

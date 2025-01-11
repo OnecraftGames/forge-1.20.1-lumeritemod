@@ -53,6 +53,9 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModBlock.DRAGONE_CRAFTER.get());
 
+                        pOutput.accept(ModItems.DYNAMITE.get());
+                        pOutput.accept(ModItems.BIG_DYNAMITE.get());
+
                     })
                     .build()
     );
