@@ -3,6 +3,7 @@ package net.lumerite.lumeritemod.item.constructor;
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.lumerite.lumeritemod.item.tiers.DragoneHammerTiers;
 import net.lumerite.lumeritemod.item.tiers.DragonePickaxeTiers;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -33,9 +34,16 @@ public class HammerConstructor extends PickaxeItem {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.empty());
-        pTooltipComponents.add(Component.translatable(this.tooltip));
-        pTooltipComponents.add(Component.empty());
+
+        if (Screen.hasShiftDown()) {
+            pTooltipComponents.add(Component.empty());
+            pTooltipComponents.add(Component.translatable(this.tooltip));
+            pTooltipComponents.add(Component.empty());
+        } else {
+            pTooltipComponents.add(Component.translatable("tooltip.hold_shift"));
+        }
+
+
     }
 
     @Override

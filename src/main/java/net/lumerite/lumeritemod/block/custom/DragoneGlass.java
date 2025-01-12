@@ -3,6 +3,7 @@ package net.lumerite.lumeritemod.block.custom;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
@@ -40,9 +41,15 @@ public class DragoneGlass extends Block {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable BlockGetter pLevel, List<Component> pTooltip, TooltipFlag pFlag) {
-        pTooltip.add(Component.empty());
-        pTooltip.add(Component.translatable("tooltip.dragone_glass"));
-        pTooltip.add(Component.empty());
+
+        if (Screen.hasShiftDown()) {
+            pTooltip.add(Component.empty());
+            pTooltip.add(Component.translatable("tooltip.dragone_glass"));
+            pTooltip.add(Component.empty());
+        } else {
+            pTooltip.add(Component.translatable("tooltip.hold_shift"));
+        }
+
     }
 
     @Override
