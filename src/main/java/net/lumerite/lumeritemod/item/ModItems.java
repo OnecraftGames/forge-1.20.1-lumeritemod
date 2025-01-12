@@ -68,6 +68,9 @@ public class ModItems {
     public static final RegistryObject<Item> BIG_DYNAMITE = ITEMS_BUILDER.register("big_dynamite",
             () -> new BigDynamite(new Item.Properties()));
 
+    public static final RegistryObject<Item> URANIUM_INGOT = ITEMS_BUILDER.register("uranium_ingot",
+            () -> new Item(new Item.Properties()));
+
     public static void register(IEventBus e) {
         ITEMS_BUILDER.register(e);
     }

@@ -9,6 +9,8 @@
     "lumeritemod:dragone_crafter",
     "lumeritemod:dragone_stairs",
     "lumeritemod:dragone_slab",
-    "lumeritemod:dragone_glass"
+    "lumeritemod:dragone_glass",
+    "lumeritemod:uranium_block",
+    "lumeritemod:uranium_ore"
   ]
 }

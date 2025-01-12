@@ -57,7 +57,6 @@ public class BigDynamiteEntity extends ThrowableItemProjectile {
 
     @Override
     protected void onHitBlock(BlockHitResult result) {
-        super.onHitBlock(result);
         // Implémente ce que le projectile fait lorsqu'il touche un bloc
         Level level = this.level();
         if (!level.isClientSide) {
@@ -76,7 +75,7 @@ public class BigDynamiteEntity extends ThrowableItemProjectile {
             if (entity instanceof LivingEntity livingEntity) {
                 // Appliquer des dégâts au lanceur et aux autres entités
                 float damageAmount = 10.0F; // Quantité de dégâts
-                livingEntity.hurt(level.damageSources().explosion(this, this.getOwner()), damageAmount);
+                livingEntity.hurt(level.damageSources().explosion(this, this), damageAmount);
             }
         }
     }

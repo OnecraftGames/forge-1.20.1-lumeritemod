@@ -52,6 +52,12 @@ public class ModBlock {
     public static final RegistryObject<Block> DRAGONE_CRAFTER = registerBlock("dragone_crafter",
             () -> new DragoneCrafter(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL).sound(SoundType.WOOD)));
 
+    public static final RegistryObject<Block> URANIUM_ORE = registerBlock("uranium_ore",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> URANIUM_BLOCK = registerBlock("uranium_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS_BUILDER.register(name, block);
         registerBlockItem(name, toReturn);

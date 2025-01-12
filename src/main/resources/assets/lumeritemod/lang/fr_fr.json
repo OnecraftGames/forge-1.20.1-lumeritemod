@@ -10,6 +10,11 @@
     "block.lumeritemod.dragone_block": "Bloc de Dragone",
     "block.lumeritemod.dragone_ore": "Minerai de Dragone",
 
+    "block.lumeritemod.uranium_block": "Bloc d'Uranium",
+    "block.lumeritemod.uranium_ore": "Minerai d'Uranium",
+
+    "item.lumeritemod.uranium_ingot": "Lingot d'Uranium",
+
     "item.lumeritemod.dragone_pickaxe": "Pioche en Dragone",
     "item.lumeritemod.dragone_axe": "Hache en Dragone",
     "item.lumeritemod.dragone_shovel": "Pelle en Dragone",

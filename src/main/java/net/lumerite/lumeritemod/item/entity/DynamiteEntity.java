@@ -56,7 +56,6 @@ public class DynamiteEntity extends ThrowableItemProjectile {
 
     @Override
     protected void onHitBlock(BlockHitResult result) {
-        super.onHitBlock(result);
         // Implémente ce que le projectile fait lorsqu'il touche un bloc
         Level level = this.level();
         if (!level.isClientSide) {

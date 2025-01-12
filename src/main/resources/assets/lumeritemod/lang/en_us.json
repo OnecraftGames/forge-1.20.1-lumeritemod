@@ -10,6 +10,11 @@
     "block.lumeritemod.dragone_block": "Dragone Block",
     "block.lumeritemod.dragone_ore": "Dragone Ore",
 
+    "block.lumeritemod.uridium_block": "Uridium Block",
+    "block.lumeritemod.uridium_ore": "Uridium Ore",
+
+    "item.lumeritemod.uridium_ingot": "Uridium Ingot",
+
     "item.lumeritemod.dragone_pickaxe": "Dragone Pickaxe",
     "item.lumeritemod.dragone_axe": "Dragone Axe",
     "item.lumeritemod.dragone_shovel": "Dragone Shovel",

@@ -53,6 +53,10 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModBlock.DRAGONE_CRAFTER.get());
 
+                        pOutput.accept(ModBlock.URANIUM_ORE.get());
+                        pOutput.accept(ModBlock.URANIUM_BLOCK.get());
+                        pOutput.accept(ModItems.URANIUM_INGOT.get());
+
                         pOutput.accept(ModItems.DYNAMITE.get());
                         pOutput.accept(ModItems.BIG_DYNAMITE.get());
 

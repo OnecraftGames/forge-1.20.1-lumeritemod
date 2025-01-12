@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "lumeritemod:block/uranium_block"
+    }
+  }
+}

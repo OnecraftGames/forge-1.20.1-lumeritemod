@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.5,
+  "group": "uranium",
+  "ingredient": {
+    "item": "lumeritemod:uranium_ore"
+  },
+  "result": "lumeritemod:uranium_ingot"
+}
