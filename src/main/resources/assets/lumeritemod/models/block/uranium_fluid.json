@@ -1,0 +1,6 @@
+{
+  "loader": "forge:fluid",
+  "fluid": "lumeritemod:uranium_fluid",
+  "still_texture": "minecraft:blocks/water_still",
+  "flowing_texture": "minecraft:blocks/water_flow"
+}

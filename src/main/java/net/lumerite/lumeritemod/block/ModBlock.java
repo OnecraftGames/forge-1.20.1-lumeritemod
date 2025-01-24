@@ -4,6 +4,7 @@ import net.lumerite.lumeritemod.LumeriteMod;
 import net.lumerite.lumeritemod.block.custom.DragoneCrafter;
 import net.lumerite.lumeritemod.block.custom.DragoneGlass;
 import net.lumerite.lumeritemod.block.custom.ExtractorBlock;
+import net.lumerite.lumeritemod.fluids.ModFluids;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
@@ -57,6 +58,14 @@ public class ModBlock {
 
     public static final RegistryObject<Block> URANIUM_BLOCK = registerBlock("uranium_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
+    public static final RegistryObject<LiquidBlock> URANIUM_WATER = registerBlock("uranium_water",
+            () -> new LiquidBlock(ModFluids.SOURCE_URANIUM_WATER,
+                    BlockBehaviour.Properties.copy(Blocks.WATER)
+                            .noCollission()
+                            .strength(100.0F)
+                            .randomTicks()
+            ));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS_BUILDER.register(name, block);

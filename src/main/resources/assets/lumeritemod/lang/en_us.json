@@ -28,16 +28,18 @@
     "item.lumeritemod.dynamite": "Dynamite",
     "item.lumeritemod.big_dynamite": "Big Dynamite",
 
+    "item.lumeritemod.uranium_bucket": "Uranium Water Bucket",
+
     "block.lumeritemod.extractor_block": "Extractor Block",
     "block.lumeritemod.extractor_block_casing": "Extractor Block Casing",
     "block.lumeritemod.extractor_block_frame": "Extractor Block Frame",
 
-    "tooltip.dragone_helmet": "§6 • Adds night vision",
-    "tooltip.dragone_hammer": "§6 • Breaks blocks in 3x3",
-    "tooltip.dragone_glass": "§6 • Reinforced glass, explosion resistant",
-    "tooltip.dragone_crafter_iron": "§6 • Improves crafting speed at level 1 \n obtainable after 15 minutes placed on the ground \n (lvl 0 -> lvl 1)",
-    "tooltip.dragone_boots": "§6 • Increases movement speed",
-    "tooltip.hold_shift": "Hold §e§o§nShift§r§7 for more information",
+    "tooltip.dragone_helmet": "§7Night vision II",
+    "tooltip.dragone_hammer": "§7Breaks blocks in 3x3",
+    "tooltip.dragone_glass": "§7Reinforced glass, explosion resistant",
+    "tooltip.dragone_crafter_iron": "§7Improves crafting speed at level 1\nobtainable after 15 minutes placed on the ground\n(lvl 0 -> lvl 1)",
+    "tooltip.dragone_boots": "§6 • Speed II",
+    "tooltip.hold_shift": "§7Hold §b§nSHIFT§r§7 for more information",
 
     "chat.lumeritemod.dragone_crafter_upgrade": "Your dragon crafter has evolved: ",
     "chat.lumeritemod.assign_to_player": "This block is now your crafter until it is broken: ",

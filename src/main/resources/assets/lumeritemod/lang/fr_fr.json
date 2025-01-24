@@ -28,16 +28,18 @@
     "item.lumeritemod.dynamite": "Dynamite",
     "item.lumeritemod.big_dynamite": "Grosse Dynamite",
 
+    "item.lumeritemod.uranium_bucket": "Seau d'Eau d'Uranium",
+
     "block.lumeritemod.extractor_block": "Bloc d'Extracteur",
     "block.lumeritemod.extractor_block_casing": "Enveloppe de Bloc d'Extracteur",
     "block.lumeritemod.extractor_block_frame": "Cadre de Bloc d'Extracteur",
 
-    "tooltip.dragone_helmet": "§6 • Ajoute vision nocturne",
-    "tooltip.dragone_hammer": "§6 • Casse les blocs en 3x3",
-    "tooltip.dragone_glass": "§6 • Verre renforcé, résistant aux explosions",
-    "tooltip.dragone_crafter_iron": "§6 • Améliore la vitesse de fabrication au niveau 1 \n obtenable au bout de 15 minutes posé au sol \n (niv 0 -> niv 1)",
-    "tooltip.dragone_boots": "§6 • Augmente la vitesse de déplacement",
-    "tooltip.hold_shift": "Maintenez §e§o§nMaj§r§7 pour plus d'informations",
+    "tooltip.dragone_helmet": "§6 • Vision nocturne II",
+    "tooltip.dragone_hammer": "§7Casse les blocs en 3x3",
+    "tooltip.dragone_glass": "§7Verre renforcé, résistant aux explosions",
+    "tooltip.dragone_crafter_iron": "§7Améliore la vitesse de fabrication au niveau 1\nobtenable au bout de 15 minutes posé au sol\n(niv 0 -> niv 1)",
+    "tooltip.dragone_boots": "§6 • Rapidité II",
+    "tooltip.hold_shift": "§7Maintenez §b§nMAJ§r§7 pour plus d'informations",
 
     "chat.lumeritemod.dragone_crafter_upgrade": "§7Votre crafter en dragon a évolué :",
     "chat.lumeritemod.assign_to_player": "§7Ce bloc est maintenant votre crafter jusqu'a ce qu'il soit cassé :",
