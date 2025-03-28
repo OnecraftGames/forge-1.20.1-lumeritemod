@@ -6,6 +6,6 @@ import net.minecraft.world.item.Item;
 
 public class DragoneShovel extends ShovelItem {
     public DragoneShovel() {
-        super(new DragonePickaxeTiers(), 1.5F, -3.0F, new Item.Properties());
+        super(new DragonePickaxeTiers(), 1F, -3.0F, new Item.Properties());
     }
 }

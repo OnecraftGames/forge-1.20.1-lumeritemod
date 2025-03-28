@@ -1,7 +1,6 @@
 package net.lumerite.lumeritemod.item;
 
 import net.lumerite.lumeritemod.LumeriteMod;
-import net.lumerite.lumeritemod.fluids.ModFluids;
 import net.lumerite.lumeritemod.item.armor.DragoneArmorItem;
 import net.lumerite.lumeritemod.item.armor.DragoneArmorMaterial;
 import net.lumerite.lumeritemod.item.custom.*;
@@ -73,9 +72,6 @@ public class ModItems {
 
     public static final RegistryObject<Item> URANIUM_INGOT = ITEMS_BUILDER.register("uranium_ingot",
             () -> new Item(new Item.Properties()));
-
-    public static final RegistryObject<Item> URANIUM_BUCKET = ITEMS_BUILDER.register("uranium_bucket",
-            () -> new BucketItem(ModFluids.SOURCE_URANIUM_WATER, new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     public static void register(IEventBus e) {
         ITEMS_BUILDER.register(e);

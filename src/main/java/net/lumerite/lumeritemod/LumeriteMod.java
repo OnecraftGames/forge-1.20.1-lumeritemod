@@ -4,8 +4,6 @@ import com.mojang.logging.LogUtils;
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.lumerite.lumeritemod.block.entity.ModBlockEntities;
 import net.lumerite.lumeritemod.events.ClientSetup;
-import net.lumerite.lumeritemod.fluids.ModFluids;
-import net.lumerite.lumeritemod.fluids.ModFluidsTypes;
 import net.lumerite.lumeritemod.item.ModCreativeModTabs;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.lumerite.lumeritemod.item.entity.ModItemsEntities;
@@ -56,9 +54,6 @@ public class LumeriteMod
         ModMenuTypes.register(modEventBus);
         ModBlockEntities.register(modEventBus);
 
-        ModFluids.register(modEventBus);
-        ModFluidsTypes.register(modEventBus);
-
         modEventBus.addListener(this::commonSetup);
 
 
@@ -96,8 +91,6 @@ public class LumeriteMod
 
             EntityRenderers.register(ModItemsEntities.DYNAMITE_ENTITY.get(), ThrownItemRenderer::new);
             EntityRenderers.register(ModItemsEntities.BIG_DYNAMITE_ENTITY.get(), ThrownItemRenderer::new);
-
-
 
             ClientSetup.init(event);
         }
