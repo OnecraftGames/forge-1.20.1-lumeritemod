@@ -22,6 +22,11 @@ public class ModBlockEntities {
                     BlockEntityType.Builder.of(DragoneCrafterEntity::new,
                             ModBlock.DRAGONE_CRAFTER.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<DragoneCrafterIronEntity>> DRAGONE_CRAFTER_IRON_BE =
+            BLOCK_ENTITIES.register("dragone_crafter_iron_be", () ->
+                    BlockEntityType.Builder.of(DragoneCrafterIronEntity::new,
+                            ModBlock.DRAGONE_CRAFTER_IRON.get()).build(null));
+
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);

@@ -52,6 +52,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.DRAGONE_BOOTS.get());
 
                         pOutput.accept(ModBlock.DRAGONE_CRAFTER.get());
+                        pOutput.accept(ModBlock.DRAGONE_CRAFTER_IRON.get());
 
                         pOutput.accept(ModBlock.URANIUM_ORE.get());
                         pOutput.accept(ModBlock.URANIUM_BLOCK.get());
@@ -59,6 +60,9 @@ public class ModCreativeModTabs {
 
                         pOutput.accept(ModItems.DYNAMITE.get());
                         pOutput.accept(ModItems.BIG_DYNAMITE.get());
+
+                        pOutput.accept(ModBlock.DRAGONE_TELEPORTOR.get());
+                        pOutput.accept(ModBlock.DRAGONE_TELEPORTOR_UPPER.get());
 
                     })
                     .build()

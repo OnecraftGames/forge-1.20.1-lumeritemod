@@ -7,10 +7,13 @@
     "lumeritemod:extractor_block_casing",
     "lumeritemod:extractor_block_frame",
     "lumeritemod:dragone_crafter",
+    "lumeritemod:dragone_crafter_iron",
     "lumeritemod:dragone_stairs",
     "lumeritemod:dragone_slab",
     "lumeritemod:dragone_glass",
     "lumeritemod:uranium_block",
-    "lumeritemod:uranium_ore"
+    "lumeritemod:uranium_ore",
+    "lumeritemod:dragone_teleportor",
+    "lumeritemod:dragone_teleportor_upper"
   ]
 }

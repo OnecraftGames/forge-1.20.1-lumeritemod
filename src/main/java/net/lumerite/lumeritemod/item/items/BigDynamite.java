@@ -1,4 +1,4 @@
-package net.lumerite.lumeritemod.item.custom;
+package net.lumerite.lumeritemod.item.items;
 
 import net.lumerite.lumeritemod.item.entity.DynamiteEntity;
 import net.minecraft.sounds.SoundEvents;

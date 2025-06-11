@@ -1,6 +1,7 @@
 package net.lumerite.lumeritemod.screen;
 
 import net.lumerite.lumeritemod.LumeriteMod;
+import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterIronMenu;
 import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterMenu;
 import net.lumerite.lumeritemod.screen.extractorblock.ExtractorMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -22,6 +23,9 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<DragoneCrafterMenu>> DragoneCrafterMenu =
             registerMenuType("dragone_crafter_menu", DragoneCrafterMenu::new);
+
+    public static final RegistryObject<MenuType<DragoneCrafterIronMenu>> DragoneCrafterIronMenu =
+            registerMenuType("dragone_crafter_iron_menu", DragoneCrafterIronMenu::new);
 
     public static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENU_TYPE_DEFERRED_REGISTER.register(name, () -> IForgeMenuType.create(factory));

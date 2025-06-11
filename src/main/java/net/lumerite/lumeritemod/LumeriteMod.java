@@ -8,6 +8,7 @@ import net.lumerite.lumeritemod.item.ModCreativeModTabs;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.lumerite.lumeritemod.item.entity.ModItemsEntities;
 import net.lumerite.lumeritemod.screen.ModMenuTypes;
+import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterIronScreen;
 import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterScreen;
 import net.lumerite.lumeritemod.screen.extractorblock.ExtractorScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -88,6 +89,7 @@ public class LumeriteMod
         {
             MenuScreens.register(ModMenuTypes.EXTRACTOR_MENU.get(), ExtractorScreen::new);
             MenuScreens.register(ModMenuTypes.DragoneCrafterMenu.get(), DragoneCrafterScreen::new);
+            MenuScreens.register(ModMenuTypes.DragoneCrafterIronMenu.get(), DragoneCrafterIronScreen::new);
 
             EntityRenderers.register(ModItemsEntities.DYNAMITE_ENTITY.get(), ThrownItemRenderer::new);
             EntityRenderers.register(ModItemsEntities.BIG_DYNAMITE_ENTITY.get(), ThrownItemRenderer::new);

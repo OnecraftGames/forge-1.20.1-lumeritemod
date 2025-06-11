@@ -1,8 +1,6 @@
 package net.lumerite.lumeritemod.item.constructor;
 
 import net.lumerite.lumeritemod.block.ModBlock;
-import net.lumerite.lumeritemod.item.tiers.DragoneHammerTiers;
-import net.lumerite.lumeritemod.item.tiers.DragonePickaxeTiers;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -13,7 +11,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;

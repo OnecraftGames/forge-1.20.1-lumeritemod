@@ -1,6 +1,7 @@
 package net.lumerite.lumeritemod.block.entity;
 
 import net.lumerite.lumeritemod.managers.DragoneCrafterRecipesManager;
+import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterIronMenu;
 import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -27,7 +28,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import oshi.util.tuples.Pair;
 
-public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
+public class DragoneCrafterIronEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(6);
 
     private static final int INPUT_SLOT_1 = 0;   //
@@ -43,19 +44,19 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
 
     protected final ContainerData data;
     private int progress = 0;
-    private int maxProgress = 78;
+    private int maxProgress = 40;
     private long timePlaced;
 
 
-    public DragoneCrafterEntity(BlockPos pPos, BlockState pBlockState) {
-        super(ModBlockEntities.DRAGONE_CRAFTER_BE.get(), pPos, pBlockState);
+    public DragoneCrafterIronEntity(BlockPos pPos, BlockState pBlockState) {
+        super(ModBlockEntities.DRAGONE_CRAFTER_IRON_BE.get(), pPos, pBlockState);
         this.timePlaced = System.currentTimeMillis();
         this.data = new ContainerData() {
             @Override
             public int get(int pIndex) {
                 return switch (pIndex) {
-                    case 0 -> DragoneCrafterEntity.this.progress;
-                    case 1 -> DragoneCrafterEntity.this.maxProgress;
+                    case 0 -> DragoneCrafterIronEntity.this.progress;
+                    case 1 -> DragoneCrafterIronEntity.this.maxProgress;
                     default -> 0;
                 };
             }
@@ -63,8 +64,8 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
             @Override
             public void set(int pIndex, int pValue) {
                 switch (pIndex) {
-                    case 0 -> DragoneCrafterEntity.this.progress = pValue;
-                    case 1 -> DragoneCrafterEntity.this.maxProgress = pValue;
+                    case 0 -> DragoneCrafterIronEntity.this.progress = pValue;
+                    case 1 -> DragoneCrafterIronEntity.this.maxProgress = pValue;
                 }
             }
 
@@ -114,14 +115,14 @@ public class DragoneCrafterEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("block.lumeritemod.dragone_crafter");
+        return Component.translatable("block.lumeritemod.dragone_crafter_iron");
     }
 
     @Nullable
     @Override
     public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
 
-        return new DragoneCrafterMenu(pContainerId, pPlayerInventory, this, this.data);
+        return new DragoneCrafterIronMenu(pContainerId, pPlayerInventory, this, this.data);
     }
 
     @Override

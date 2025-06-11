@@ -1,21 +1,13 @@
-package net.lumerite.lumeritemod.block.custom;
+package net.lumerite.lumeritemod.block.blocks;
 
-import com.mojang.blaze3d.systems.RenderSystem;
-import net.lumerite.lumeritemod.block.ModBlock;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.GlassBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -64,16 +56,6 @@ public class DragoneGlass extends Block {
 
     @Override
     public int getLightBlock(BlockState pState, BlockGetter pLevel, BlockPos pPos) {
-        return 0;
-    }
-
-    @Override
-    public boolean skipRendering(BlockState state, BlockState adjacentBlockState, Direction side) {
-
-        if (adjacentBlockState.is(this)) {
-            return true; // Ne pas afficher les faces adjacentes du même type (Cave Block)
-        }
-
-        return false; // Sinon, afficher normalement
+        return 0; // Permet à la lumière de passer à travers
     }
 }

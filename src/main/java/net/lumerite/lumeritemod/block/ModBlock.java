@@ -1,19 +1,18 @@
 package net.lumerite.lumeritemod.block;
 
 import net.lumerite.lumeritemod.LumeriteMod;
-import net.lumerite.lumeritemod.block.custom.DragoneCrafter;
-import net.lumerite.lumeritemod.block.custom.DragoneGlass;
-import net.lumerite.lumeritemod.block.custom.ExtractorBlock;
+import net.lumerite.lumeritemod.block.blocks.*;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+// import of Iron Pickaxe.java
+
 
 import java.util.function.Supplier;
 
@@ -24,16 +23,16 @@ public class ModBlock {
 
 
     public static final RegistryObject<Block> DRAGONE_BLOCK = registerBlock("dragone_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+            () -> new DragoneBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> DRAGONE_ORE = registerBlock("dragone_ore",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).sound(SoundType.STONE)));
+            () -> new DragoneOre(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> DRAGONE_SLAB = registerBlock("dragone_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+            () -> new DragoneSlab(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> DRAGONE_STAIRS = registerBlock("dragone_stairs",
-            () -> new StairBlock(Blocks.STONE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+            () -> new DragoneStairs(Blocks.STONE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
     public static final RegistryObject<Block> DRAGONE_GLASS = registerBlock("dragone_glass",
             DragoneGlass::new);
@@ -43,20 +42,29 @@ public class ModBlock {
             () -> new ExtractorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> EXTRACTOR_CASING = registerBlock("extractor_block_casing",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+            () -> new ExtractorBlockCasing(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> EXTRACTOR_FRAME = registerBlock("extractor_block_frame",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
+            () -> new ExtractorBlockFrame(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.STONE)));
 
 
     public static final RegistryObject<Block> DRAGONE_CRAFTER = registerBlock("dragone_crafter",
             () -> new DragoneCrafter(BlockBehaviour.Properties.copy(Blocks.WHITE_WOOL).sound(SoundType.WOOD)));
 
+    public static final RegistryObject<Block> DRAGONE_CRAFTER_IRON = registerBlock("dragone_crafter_iron",
+            () -> new DragoneCrafterIron(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
     public static final RegistryObject<Block> URANIUM_ORE = registerBlock("uranium_ore",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).sound(SoundType.STONE)));
+            () -> new UraniumOre(BlockBehaviour.Properties.copy(Blocks.IRON_ORE).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> URANIUM_BLOCK = registerBlock("uranium_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+            () -> new UranuimBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> DRAGONE_TELEPORTOR = registerBlock("dragone_teleportor",
+            () -> new DragoneTeleportorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
+
+    public static final RegistryObject<Block> DRAGONE_TELEPORTOR_UPPER = registerBlock("dragone_teleportor_upper",
+            () -> new DragoneTeleportorBlockUpper(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS_BUILDER.register(name, block);

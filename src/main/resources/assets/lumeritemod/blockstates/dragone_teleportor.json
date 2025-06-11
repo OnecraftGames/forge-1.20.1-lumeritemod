@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+        "model": "lumeritemod:block/dragone_teleportor",
+        "y": 0
+    },
+    "facing=east": {
+        "model": "lumeritemod:block/dragone_teleportor",
+        "y": 90
+    },
+    "facing=south": {
+        "model": "lumeritemod:block/dragone_teleportor",
+        "y": 180
+    },
+    "facing=west": {
+        "model": "lumeritemod:block/dragone_teleportor",
+        "y": 270
+    }
+  }
+}
