@@ -10,10 +10,10 @@
     "block.lumeritemod.dragone_block": "Dragone Block",
     "block.lumeritemod.dragone_ore": "Dragone Ore",
 
-    "block.lumeritemod.uridium_block": "Uridium Block",
-    "block.lumeritemod.uridium_ore": "Uridium Ore",
+    "block.lumeritemod.uranium_block": "Uranium Block",
+    "block.lumeritemod.uranium_ore": "Uranium Ore",
 
-    "item.lumeritemod.uridium_ingot": "Uridium Ingot",
+    "item.lumeritemod.uranium_ingot": "Uranium Ingot",
 
     "item.lumeritemod.dragone_pickaxe": "Dragone Pickaxe",
     "item.lumeritemod.dragone_axe": "Dragone Axe",
@@ -32,7 +32,7 @@
     "block.lumeritemod.extractor_block_casing": "Extractor Block Casing",
     "block.lumeritemod.extractor_block_frame": "Extractor Block Frame",
 
-    "tooltip.dragone_helmet": "§7Night vision II",
+    "tooltip.dragone_helmet": "§6 • Night vision II",
     "tooltip.dragone_hammer": "§7Breaks blocks in 3x3",
     "tooltip.dragone_glass": "§7Reinforced glass, explosion resistant",
     "tooltip.dragone_boots": "§6 • Speed II",

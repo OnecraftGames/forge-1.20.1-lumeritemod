@@ -1,6 +1,7 @@
 package net.lumerite.lumeritemod.item;
 
 import net.lumerite.lumeritemod.LumeriteMod;
+import net.lumerite.lumeritemod.core.base.item.FuelItem;
 import net.lumerite.lumeritemod.item.armor.DragoneArmorItem;
 import net.lumerite.lumeritemod.item.armor.DragoneArmorMaterial;
 import net.lumerite.lumeritemod.item.items.*;

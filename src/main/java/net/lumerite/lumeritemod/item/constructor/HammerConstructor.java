@@ -22,6 +22,7 @@ import java.util.List;
 public class HammerConstructor extends PickaxeItem {
 
     String tooltip;
+    private Direction currentDirection;
 
     public HammerConstructor(Tier tier, String Tooltip) {
         super(tier, 1, -2.8F, new Item.Properties());
@@ -52,11 +53,18 @@ public class HammerConstructor extends PickaxeItem {
         return super.mineBlock(stack, world, state, pos, entity);
     }
 
-    private BlockHitResult rayTrace(Level world, Player player) {
-        Vec3 eyePos = player.getEyePosition(1.0F);
-        Vec3 lookVec = player.getViewVector(1.0F);
-        Vec3 rayEnd = eyePos.add(lookVec.x * 5, lookVec.y * 5, lookVec.z * 5);
-        return world.clip(new ClipContext(eyePos, rayEnd, ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, player));
+    @Override
+    public boolean onBlockStartBreak(ItemStack itemstack, BlockPos pos, Player player) {
+        Level level = player.level();
+
+        // Seulement côté client
+        if (level.isClientSide) {
+            if (player.pick(20.0D, 0.0F, false) instanceof BlockHitResult hitResult) {
+                this.currentDirection = hitResult.getDirection();
+            }
+        }
+
+        return super.onBlockStartBreak(itemstack, pos, player);
     }
 
     private void breakAdjacentBlocks(Level world, BlockPos pos, LivingEntity entity) {
@@ -71,19 +79,13 @@ public class HammerConstructor extends PickaxeItem {
                     // Ne pas casser le bloc central
                     if (dx == 0 && dy == 0 && dz == 0) continue;
 
-                    Direction direction = rayTrace(world, entity.level().getPlayerByUUID(entity.getUUID())).getDirection();
-
                     BlockPos adjacentPos = pos.offset(dx, dx, dz);
 
-
-                    if (direction == Direction.UP || direction == Direction.DOWN) {
-                        adjacentPos = pos.offset(dx, 0, dz);
-                    } else if (direction == Direction.EAST || direction == Direction.WEST) {
-                        adjacentPos = pos.offset(0, dy, dz);
-                    } else if (direction == Direction.NORTH || direction == Direction.SOUTH) {
-                        adjacentPos = pos.offset(dx, dy, 0);
+                    switch (this.currentDirection) {
+                        case DOWN, UP -> adjacentPos = pos.offset(dx, 0, dz);
+                        case EAST, WEST -> adjacentPos = pos.offset(0, dy, dz);
+                        case NORTH, SOUTH -> adjacentPos = pos.offset(dx, dy, 0);
                     }
-
 
                     BlockState adjacentState = world.getBlockState(adjacentPos);
 
@@ -109,7 +111,9 @@ public class HammerConstructor extends PickaxeItem {
                 state.is(BlockTags.EMERALD_ORES) ||
                 state.is(BlockTags.LAPIS_ORES) ||
                 state.is(BlockTags.REDSTONE_ORES) ||
-                state.is(ModBlock.DRAGONE_ORE.get());
+                state.is(ModBlock.DRAGONE_ORE.get()) ||
+                state.is(ModBlock.URANIUM_BLOCK.get()) ||
+                state.is(ModBlock.URANIUM_ORE.get());
     }
 
 }
