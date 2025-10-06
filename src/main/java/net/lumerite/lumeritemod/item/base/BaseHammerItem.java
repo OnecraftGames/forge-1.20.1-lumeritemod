@@ -1,4 +1,4 @@
-package net.lumerite.lumeritemod.item.constructor;
+package net.lumerite.lumeritemod.item.base;
 
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.minecraft.client.gui.screens.Screen;
@@ -9,22 +9,20 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
 
-public class HammerConstructor extends PickaxeItem {
+public class BaseHammerItem extends PickaxeItem {
 
     String tooltip;
     private Direction currentDirection;
 
-    public HammerConstructor(Tier tier, String Tooltip) {
+    public BaseHammerItem(Tier tier, String Tooltip) {
         super(tier, 1, -2.8F, new Item.Properties());
 
         this.tooltip = Tooltip;

@@ -1,5 +1,6 @@
-package net.lumerite.lumeritemod.events;
+package net.lumerite.lumeritemod.core.handlers;
 
+import net.lumerite.lumeritemod.LumeriteMod;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -10,7 +11,7 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = "lumeritemod", bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = LumeriteMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class ArmorEffectEvents {
 
     @SubscribeEvent

@@ -1,6 +1,7 @@
 package net.lumerite.lumeritemod.item;
 
 
+import net.lumerite.lumeritemod.LumeriteMod;
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -13,7 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModCreativeModTabs {
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS_BUILDER =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "lumeritemod");
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, LumeriteMod.MOD_ID);
 
     public static final RegistryObject<CreativeModeTab> LUMERITE_TAB = CREATIVE_MODE_TABS_BUILDER.register("lumerite_tab",
             () -> CreativeModeTab.builder()

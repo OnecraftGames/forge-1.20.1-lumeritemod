@@ -7,6 +7,8 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -19,6 +21,8 @@ import net.minecraft.world.level.block.DirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -52,7 +56,7 @@ public class DragoneTeleportorBlock extends DirectionalBlock {
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         super.animateTick(state, level, pos, random);
 
-        // Nombre de particules à générer (tu peux ajuster)
+        // Nombre de particules à générer
         for (int i = 0; i < 2; ++i) {
             double x = pos.getX() + 0.5 + (random.nextDouble() - 0.5);
             double y = pos.getY() + 1.0;
@@ -125,5 +129,15 @@ public class DragoneTeleportorBlock extends DirectionalBlock {
         }
 
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+    }
+
+    @Override
+    public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
+
+        BlockPos above = pPos.above();
+        BlockState aboveState = pLevel.getBlockState(above);
+
+
+        return super.use(pState, pLevel, pPos, pPlayer, pHand, pHit);
     }
 }

@@ -1,6 +1,6 @@
-package net.lumerite.lumeritemod.events;
+package net.lumerite.lumeritemod.core.handlers;
 
-import com.mojang.blaze3d.systems.RenderSystem;
+import net.lumerite.lumeritemod.LumeriteMod;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,7 +15,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 
-@Mod.EventBusSubscriber(modid = "lumeritemod", bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = LumeriteMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
 public class DisplayOverlay {
 
     @SubscribeEvent

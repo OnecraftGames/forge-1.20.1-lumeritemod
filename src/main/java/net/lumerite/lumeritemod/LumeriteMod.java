@@ -3,7 +3,7 @@ package net.lumerite.lumeritemod;
 import com.mojang.logging.LogUtils;
 import net.lumerite.lumeritemod.block.ModBlock;
 import net.lumerite.lumeritemod.block.entity.ModBlockEntities;
-import net.lumerite.lumeritemod.events.ClientSetup;
+import net.lumerite.lumeritemod.core.handlers.ClientSetup;
 import net.lumerite.lumeritemod.item.ModCreativeModTabs;
 import net.lumerite.lumeritemod.item.ModItems;
 import net.lumerite.lumeritemod.item.entity.ModItemsEntities;
@@ -12,9 +12,6 @@ import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterIronScreen;
 import net.lumerite.lumeritemod.screen.dragonecrafter.DragoneCrafterScreen;
 import net.lumerite.lumeritemod.screen.extractorblock.ExtractorScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,8 +25,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
-import java.awt.*;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(LumeriteMod.MOD_ID)
