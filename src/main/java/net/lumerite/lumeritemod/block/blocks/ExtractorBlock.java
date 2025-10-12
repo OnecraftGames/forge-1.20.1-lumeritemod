@@ -158,10 +158,6 @@ public class ExtractorBlock extends BaseEntityBlock {
                     // Récupération du bloc réel à cette position
                     Block actualBlock = world.getBlockState(targetPos).getBlock();
 
-                    // Affichage pour le débogage (peut être commenté ou supprimé)
-                    System.out.println("Checking block at " + targetPos + ": Expected " + expectedBlock + ", Found " + actualBlock);
-                    System.out.println("x" + x + " z" + z + " radius" + radius);
-
                     // Si le bloc réel ne correspond pas au bloc attendu, retour false
                     if (actualBlock != expectedBlock) {
                         return false; // La couche n'est pas valide

@@ -12,8 +12,6 @@
     "lumeritemod:dragone_slab",
     "lumeritemod:dragone_glass",
     "lumeritemod:uranium_block",
-    "lumeritemod:uranium_ore",
-    "lumeritemod:dragone_teleportor",
-    "lumeritemod:dragone_teleportor_upper"
+    "lumeritemod:uranium_ore"
   ]
 }

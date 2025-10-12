@@ -60,12 +60,6 @@ public class ModBlock {
     public static final RegistryObject<Block> URANIUM_BLOCK = registerBlock("uranium_block",
             () -> new UranuimBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).sound(SoundType.METAL)));
 
-    public static final RegistryObject<Block> DRAGONE_TELEPORTOR = registerBlock("dragone_teleportor",
-            () -> new DragoneTeleportorBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
-
-    public static final RegistryObject<Block> DRAGONE_TELEPORTOR_UPPER = registerBlock("dragone_teleportor_upper",
-            () -> new DragoneTeleportorBlockUpper(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion()));
-
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS_BUILDER.register(name, block);
         registerBlockItem(name, toReturn);

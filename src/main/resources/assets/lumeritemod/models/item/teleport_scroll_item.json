@@ -1,0 +1,9 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "lumeritemod:item/teleport_scroll_item"
+  },
+  "overrides": [
+    { "predicate": { "lumeritemod:mode": 1 }, "model": "lumeritemod:item/active_teleport_scroll_item" }
+  ]
+}

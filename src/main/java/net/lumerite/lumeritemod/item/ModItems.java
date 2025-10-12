@@ -1,7 +1,6 @@
 package net.lumerite.lumeritemod.item;
 
 import net.lumerite.lumeritemod.LumeriteMod;
-import net.lumerite.lumeritemod.core.base.item.FuelItem;
 import net.lumerite.lumeritemod.item.armor.DragoneArmorItem;
 import net.lumerite.lumeritemod.item.armor.DragoneArmorMaterial;
 import net.lumerite.lumeritemod.item.items.*;
@@ -71,6 +70,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> URANIUM_INGOT = ITEMS_BUILDER.register("uranium_ingot",
             () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> TELEPORT_SCROLL_ITEM = ITEMS_BUILDER.register("teleport_scroll_item",
+            () -> new TeleportScroll(new Item.Properties()));
 
     public static void register(IEventBus e) {
         ITEMS_BUILDER.register(e);

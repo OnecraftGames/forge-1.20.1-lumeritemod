@@ -28,6 +28,11 @@
     "item.lumeritemod.dynamite": "Dynamite",
     "item.lumeritemod.big_dynamite": "Big Dynamite",
 
+    "item.lumeritemod.teleport_scroll_item": "Empty Coordinate Scroll",
+    "item.lumeritemod.active_teleport_scroll_item": "Active Coordinate Scroll",
+
+    "client.message.action_bar.scroll_item_broken": "The scroll is broken",
+
     "block.lumeritemod.extractor_block": "Extractor Block",
     "block.lumeritemod.extractor_block_casing": "Extractor Block Casing",
     "block.lumeritemod.extractor_block_frame": "Extractor Block Frame",
@@ -45,9 +50,6 @@
     "block.lumeritemod.dragone_stairs": "Dragone Stairs",
 
     "block.lumeritemod.dragone_glass": "Dragone Glass",
-
-    "block.lumeritemod.dragone_teleportor": "Base of Dragone Teleportor",
-    "block.lumeritemod.dragone_teleportor_upper": "Top of Dragone Teleportor",
 
     "creative_mode_tab.lumerite_tab": "Lumerite Mod"
 }

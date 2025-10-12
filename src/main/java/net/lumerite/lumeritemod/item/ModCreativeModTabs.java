@@ -62,8 +62,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.DYNAMITE.get());
                         pOutput.accept(ModItems.BIG_DYNAMITE.get());
 
-                        pOutput.accept(ModBlock.DRAGONE_TELEPORTOR.get());
-                        pOutput.accept(ModBlock.DRAGONE_TELEPORTOR_UPPER.get());
+                        pOutput.accept(ModItems.TELEPORT_SCROLL_ITEM.get());
 
                     })
                     .build()

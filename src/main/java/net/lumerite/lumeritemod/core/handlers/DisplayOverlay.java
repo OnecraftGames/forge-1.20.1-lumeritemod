@@ -1,6 +1,7 @@
 package net.lumerite.lumeritemod.core.handlers;
 
 import net.lumerite.lumeritemod.LumeriteMod;
+import net.lumerite.lumeritemod.item.base.DamageableItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
@@ -58,7 +59,7 @@ public class DisplayOverlay {
         if (offHandItem.isEmpty()) offHandItemStackCount = "";
 
 
-        if (heldItem.isDamageableItem()) {
+        if (heldItem.isDamageableItem() || heldItem.getItem() instanceof DamageableItem) {
             int maxDurability = heldItem.getMaxDamage();
             int currentDurability = maxDurability - heldItem.getDamageValue();
             float durabilityPercent = (float) currentDurability / maxDurability;
@@ -72,7 +73,7 @@ public class DisplayOverlay {
             graphics.drawString(minecraft.font, heldItemStackCount, 30, 155, 0xFFFFFF);
         }
 
-        if (offHandItem.isDamageableItem()) {
+        if (offHandItem.isDamageableItem() || offHandItem.getItem() instanceof DamageableItem) {
             int maxDurability = offHandItem.getMaxDamage();
             int currentDurability = maxDurability - offHandItem.getDamageValue();
             float durabilityPercent = (float) currentDurability / maxDurability;
